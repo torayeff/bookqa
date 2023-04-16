@@ -2,17 +2,14 @@
 
 ## Installation
 
-`pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 ## OpenAI Key
 
-`export OPENAI_API_KEY="..."`
+```export OPENAI_API_KEY="..."```
 
-## Usage
+## How to use
 
-`python bookqa.py`
-
-## How to add a new book?
-
-1. Remove `book_index` folder
-2. Add PDF file as `book.pdf`
+1. Remove **book_index** folder
+2. Add PDF file as **book.pdf**
+3. Run ```python bookqa.py```
