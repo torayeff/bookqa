@@ -1,3 +1,4 @@
+"""Question answering over books"""
 import os
 
 from langchain.chains import ConversationalRetrievalChain
@@ -29,12 +30,13 @@ vectorstore = FAISS.load_local("book_index", embeddings)
 qa = ConversationalRetrievalChain.from_llm(
     OpenAI(temperature=0), vectorstore.as_retriever()
 )
-query = ""
-chat_history = []
 
 # start chat
-while query != "exit":
+chat_history = []
+while True:
     query = input("Human: ")
+    if query == "exit":
+        break
     result = qa({"question": query, "chat_history": chat_history})
     chat_history.append((query, result["answer"]))
 
